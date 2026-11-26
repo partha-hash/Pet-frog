@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#071b20">
-  <meta name="description" content="Pip the Pond Frog — a dreamy little pond companion who speaks, sings and changes mood.">
+  <meta name="description" content="Pip the Pond Frog — a little digital puppet with nine costumes, a formant singing voice and a Web Audio effects rack.">
   <title>Pip the Pond Frog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,74 +14,31 @@
 <body>
   <div class="pond-scene" aria-hidden="true">
     <div class="moon"></div><div class="stars"></div><div class="fireflies"></div>
-    <div class="reed reed-left"></div><div class="reed reed-right"></div>
-    <div class="waterline"></div>
+    <div class="reed reed-left"></div><div class="reed reed-right"></div><div class="waterline"></div>
   </div>
 
   <main class="app-shell">
     <header class="topbar">
-      <a class="brand" href="#" aria-label="Pip the Pond Frog home">
-        <span class="brand-mark">✳</span>
-        <span><b>PIP</b><small>THE POND FROG</small></span>
-      </a>
-      <div class="top-status"><span class="live-dot"></span> POND IS QUIET <span class="status-sep">/</span> <span id="clock">NIGHT MODE</span></div>
+      <a class="brand" href="#" aria-label="Pip the Pond Frog home"><span class="brand-mark">✳</span><span><b>PIP</b><small>THE POND FROG</small></span></a>
+      <div class="top-status"><span class="live-dot"></span> WEARING <b id="topCostume">ORIGINAL PIP</b></div>
       <button class="sound-toggle" id="soundToggle" aria-pressed="true"><span class="sound-icon">♫</span><span id="soundLabel">SOUND ON</span></button>
     </header>
 
-    <section class="intro">
-      <div class="eyebrow">YOUR LITTLE DIGITAL COMPANION <span>✦</span></div>
-      <h1>A frog with<br><em>many feelings.</em></h1>
-      <p>Say something. Feed him. Let him turn your words into a tiny song.</p>
-    </section>
-
-    <section class="main-grid">
+    <section class="stage-grid">
       <section class="frog-card panel">
-        <div class="card-topline"><span>01 / THE POND</span><span class="mood-pill"><i></i><span id="moodLabel">STONED</span></span></div>
-        <div class="frog-stage">
-          <div class="halo"></div>
-          <div class="lily lily-back"></div>
-          <div id="frogMount" class="frog-mount" aria-label="Pip, a sleepy green humanoid frog">
-            <svg id="frogSvg" viewBox="0 0 460 430" role="img" aria-label="Pip the frog">
-              <defs>
-                <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8dbb61"/><stop offset=".48" stop-color="#63964a"/><stop offset="1" stop-color="#416f3e"/></linearGradient>
-                <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2869c9"/><stop offset="1" stop-color="#123f91"/></linearGradient>
-                <filter id="softShadow"><feGaussianBlur stdDeviation="8"/></filter>
-              </defs>
-              <ellipse cx="230" cy="390" rx="150" ry="18" fill="#020d10" opacity=".45" filter="url(#softShadow)"/>
-              <path class="body-shape" d="M115 385 Q117 316 169 300 L290 300 Q350 316 360 385Z" fill="url(#shirt)" stroke="#183e38" stroke-width="7"/>
-              <path class="neck" d="M185 285 L280 285 L290 335 Q235 357 174 333Z" fill="url(#skin)" stroke="#345b37" stroke-width="6"/>
-              <path class="head" d="M78 218 Q57 148 91 91 Q119 43 178 48 Q210 12 258 35 Q310 17 349 68 Q395 104 383 190 Q382 279 318 310 Q254 345 166 316 Q93 294 78 218Z" fill="url(#skin)" stroke="#284d31" stroke-width="8" stroke-linejoin="round"/>
-              <path d="M99 118 Q108 56 177 54 Q211 26 251 45 Q295 24 338 75" fill="none" stroke="#a8cf7d" stroke-width="8" opacity=".38" stroke-linecap="round"/>
-              <g class="brow-lines" fill="none" stroke="#315b38" stroke-width="7" stroke-linecap="round">
-                <path d="M112 142 Q153 102 207 132"/><path d="M244 128 Q299 94 355 137"/>
-              </g>
-              <g class="eyes">
-                <path class="eye-white eye-left" d="M112 158 Q157 120 211 155 Q219 189 166 194 Q122 194 112 158Z" fill="#e7e9d8" stroke="#2a4931" stroke-width="6"/>
-                <path class="eye-white eye-right" d="M239 153 Q292 116 354 150 Q356 184 302 190 Q255 190 239 153Z" fill="#e7e9d8" stroke="#2a4931" stroke-width="6"/>
-                <ellipse class="pupil pupil-left" cx="174" cy="165" rx="13" ry="19" fill="#101b19"/>
-                <ellipse class="pupil pupil-right" cx="302" cy="159" rx="13" ry="19" fill="#101b19"/>
-                <circle cx="179" cy="158" r="4" fill="white"/><circle cx="307" cy="152" r="4" fill="white"/>
-                <path class="lid lid-left" d="M109 159 Q160 119 213 154 Q165 145 112 174Z" fill="#63964a"/>
-                <path class="lid lid-right" d="M237 153 Q293 115 355 150 Q296 142 241 169Z" fill="#63964a"/>
-              </g>
-              <path class="nose" d="M218 204 Q229 211 241 203" fill="none" stroke="#345b37" stroke-width="5" stroke-linecap="round"/>
-              <path class="mouth-outline" d="M121 233 Q226 202 340 231 Q356 246 334 267 Q239 303 143 271 Q116 260 121 233Z" fill="#9e5541" stroke="#563b31" stroke-width="7"/>
-              <path class="mouth-inner" d="M140 239 Q228 216 325 238 Q302 268 235 272 Q169 270 140 239Z" fill="#59372f"/>
-              <path class="mouth-line" d="M143 241 Q231 225 326 240" fill="none" stroke="#d58a6e" stroke-width="5" stroke-linecap="round"/>
-              <g class="cheeks" fill="#a8c66c" opacity=".45"><ellipse cx="108" cy="219" rx="17" ry="9"/><ellipse cx="356" cy="214" rx="17" ry="9"/></g>
-              <g class="tears" opacity="0"><path d="M130 194 Q112 228 132 239 Q151 230 130 194Z" fill="#8de0dd"/><path d="M343 191 Q326 226 345 237 Q364 225 343 191Z" fill="#8de0dd"/></g>
-              <g class="blush" opacity="0"><ellipse cx="117" cy="218" rx="23" ry="12" fill="#e78c83"/><ellipse cx="352" cy="214" rx="23" ry="12" fill="#e78c83"/></g>
-              <g class="zzz" opacity="0" fill="#d8e8b1" font-family="sans-serif" font-weight="bold"><text x="355" y="85" font-size="30">z</text><text x="382" y="57" font-size="22">z</text></g>
-              <g class="sparkles" opacity="0" fill="#f5e7a7"><path d="M70 150l6 14 14 6-14 6-6 14-6-14-14-6 14-6Z"/><path d="M375 250l5 11 11 5-11 5-5 11-5-11-11-5 11-5Z"/></g>
-              <g class="arms"><path d="M120 320 Q79 330 72 368 Q75 389 100 384 L150 349Z" fill="url(#skin)" stroke="#284d31" stroke-width="7"/><path d="M340 319 Q383 327 390 365 Q389 387 365 382 L315 348Z" fill="url(#skin)" stroke="#284d31" stroke-width="7"/></g>
-            </svg>
-          </div>
-          <div class="lily lily-front"></div>
-          <div class="water-rings"></div>
-          <div class="name-tag"><span class="name-dot"></span><span id="frogName">PIP</span><span class="name-caption">CURRENTLY FLOATING</span></div>
+        <div class="card-topline"><span>01 / THE STAGE</span><span class="mood-pill"><i></i><span id="moodLabel">STONED</span></span></div>
+        <div class="frog-stage" id="stage">
+          <div class="halo"></div><div class="lily lily-front"></div><div class="water-rings"></div>
+          <button class="nav-btn nav-prev" id="prevCostume" aria-label="Previous costume">‹</button>
+          <button class="frog-mount" id="frogMount" aria-label="Pip the frog. Tap to poke."></button>
+          <button class="nav-btn nav-next" id="nextCostume" aria-label="Next costume">›</button>
+          <div class="poof" id="poof"></div>
+          <div class="name-tag"><span class="name-dot"></span><span id="frogName">PIP</span><span class="name-caption" id="persona">GOOFY, GENTLE, MILDLY CONFUSED</span></div>
         </div>
+        <div class="expr-row" id="exprRow" aria-label="Costume expressions"></div>
         <div class="frog-actions">
           <button class="primary-btn" id="feedBtn"><span>✿</span> FEED A FLY <small>+20</small></button>
+          <button class="quiet-btn" id="laughBtn">HA HA ☺</button>
           <button class="quiet-btn" id="renameBtn">RENAME ↗</button>
         </div>
         <div class="fullness">
@@ -92,59 +49,55 @@
       </section>
 
       <section class="controls-column">
-        <section class="panel speak-panel">
-          <div class="card-topline"><span>02 / SAY SOMETHING</span><span class="tiny-label">TEXT → VOICE</span></div>
-          <label for="wordsInput" class="field-label">GIVE PIP SOMETHING TO SAY</label>
-          <textarea id="wordsInput" rows="3" maxlength="180" placeholder="the moon looks like a sleepy egg...">the moon looks like a sleepy egg...</textarea>
-          <div class="speak-bottom">
-            <label class="toggle-row"><input type="checkbox" id="speechToggle" checked><span class="toggle"></span><span>Speak the words</span></label>
-            <button class="primary-btn compact" id="sayBtn">SAY IT <span>↗</span></button>
-          </div>
-          <div class="voice-note" id="voiceNote">Pip is listening, probably.</div>
+        <section class="panel wardrobe">
+          <div class="card-topline"><span>02 / WARDROBE</span><span class="tiny-label">COSTUME = LOOK + VOICE + FX</span></div>
+          <div class="costume-grid" id="costumeGrid"></div>
         </section>
-
-        <section class="panel sing-panel">
-          <div class="card-topline"><span>03 / MAKE A LITTLE SONG</span><span class="tiny-label">WORDS → MELODY</span></div>
-          <label for="lyricsInput" class="field-label">LYRICS FOR THE POND</label>
-          <textarea id="lyricsInput" rows="2" maxlength="120" placeholder="type a little something...">I love this night, I feel alright</textarea>
-          <div class="song-settings">
-            <div class="setting">
-              <label for="tempo">TEMPO <strong><span id="tempoValue">92</span> BPM</strong></label>
-              <input type="range" id="tempo" min="60" max="150" value="92">
-            </div>
-            <div class="setting key-setting">
-              <label for="songKey">KEY</label>
-              <select id="songKey"><option value="C">C major</option><option value="G">G major</option><option value="D">D major</option><option value="A">A minor</option><option value="E">E minor</option><option value="F">F major</option></select>
-            </div>
-          </div>
-          <div class="song-actions"><button class="primary-btn" id="singBtn">♫ SING THIS</button><button class="stop-btn" id="stopBtn" disabled>STOP ■</button></div>
-          <div class="waveform" id="waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="voice-note" id="songNote">A very small concert is about to happen.</div>
+        <section class="panel moods-section">
+          <div class="card-topline"><span>03 / THE MANY MOODS OF PIP</span><span class="mood-hint">MOODS WORK IN EVERY COSTUME</span></div>
+          <div class="mood-grid" id="moodGrid"></div>
         </section>
       </section>
     </section>
 
-    <section class="moods-section panel">
-      <div class="moods-heading"><div><div class="card-topline"><span>04 / THE MANY MOODS OF PIP</span></div><h2>How's he feeling?</h2></div><span class="mood-hint">PICK A MOOD TO CHANGE HIS FACE ↘</span></div>
-      <div class="mood-grid" id="moodGrid">
-        <button class="mood-btn active" data-mood="stoned"><span class="mood-face">◡</span><b>Stoned</b></button>
-        <button class="mood-btn" data-mood="happy"><span class="mood-face">☺</span><b>Happy</b></button>
-        <button class="mood-btn" data-mood="laughing"><span class="mood-face">☻</span><b>Laughing</b></button>
-        <button class="mood-btn" data-mood="crying"><span class="mood-face">◠</span><b>Crying</b></button>
-        <button class="mood-btn" data-mood="smug"><span class="mood-face">⌣</span><b>Smug</b></button>
-        <button class="mood-btn" data-mood="angry"><span class="mood-face">⌁</span><b>Angry</b></button>
-        <button class="mood-btn" data-mood="shocked"><span class="mood-face">○</span><b>Shocked</b></button>
-        <button class="mood-btn" data-mood="sleepy"><span class="mood-face">zZ</span><b>Sleepy</b></button>
-        <button class="mood-btn" data-mood="love"><span class="mood-face">♥</span><b>In love</b></button>
-        <button class="mood-btn" data-mood="cool"><span class="mood-face">▰</span><b>Cool</b></button>
-        <button class="mood-btn" data-mood="thinking"><span class="mood-face">?</span><b>Thinking</b></button>
-        <button class="mood-btn" data-mood="queasy"><span class="mood-face">〰</span><b>Queasy</b></button>
-      </div>
+    <section class="studio-grid">
+      <section class="panel speak-panel">
+        <div class="card-topline"><span>04 / SAY SOMETHING</span><span class="tiny-label">TEXT → VOICE</span></div>
+        <label for="wordsInput" class="field-label">GIVE PIP SOMETHING TO SAY</label>
+        <textarea id="wordsInput" rows="3" maxlength="180" placeholder="the moon looks like a sleepy egg...">the moon looks like a sleepy egg...</textarea>
+        <div class="setting" style="margin-top:14px"><label for="speakEngine">VOICE ENGINE</label>
+          <select id="speakEngine"><option value="pip">Pip synth voice (costume voice + FX)</option><option value="browser">Browser text-to-speech (real words)</option></select></div>
+        <div class="speak-bottom">
+          <label class="toggle-row"><input type="checkbox" id="speechToggle" checked><span class="toggle"></span><span>Speak the words</span></label>
+          <button class="primary-btn compact" id="sayBtn">SAY IT <span>↗</span></button>
+        </div>
+        <div class="voice-note" id="voiceNote">Pip is listening, probably.</div>
+      </section>
+
+      <section class="panel sing-panel">
+        <div class="card-topline"><span>05 / SINGING STUDIO</span><span class="tiny-label">LYRICS → SYLLABLES → MELODY</span></div>
+        <label for="lyricsInput" class="field-label">LYRICS FOR THE POND</label>
+        <textarea id="lyricsInput" rows="2" maxlength="200" placeholder="type a little something...">I love this night, I feel alright</textarea>
+        <div class="song-actions"><button class="primary-btn" id="singBtn">♫ SING THIS</button><button class="stop-btn" id="stopBtn" disabled>STOP ■</button></div>
+        <canvas class="viz" id="viz" width="640" height="64" aria-label="Vocal activity"></canvas>
+        <div class="voice-note" id="songNote">A very small concert is about to happen.</div>
+        <div class="tabs" role="tablist"><button class="tab active" data-tab="melody">MELODY</button><button class="tab" data-tab="voice">MAIN VOICE</button><button class="tab" data-tab="harmony">HARMONY VOICE</button></div>
+        <div class="tab-body" id="tab-melody"></div><div class="tab-body" id="tab-voice" hidden></div><div class="tab-body" id="tab-harmony" hidden></div>
+      </section>
     </section>
+
+    <details class="panel fx-panel" id="fxPanel">
+      <summary><span class="card-topline"><span>06 / EFFECTS RACK</span><span class="tiny-label" id="fxName">PRESET: ORIGINAL PIP</span></span></summary>
+      <div class="fx-head"><span class="voice-note" style="margin:0">Presets load with each costume. Tweak freely — bypass any effect, or reset.</span><button class="quiet-btn" id="fxReset">RESET PRESET</button></div>
+      <div class="fx-grid" id="fxGrid"></div>
+    </details>
 
     <footer><span>© PIP'S LITTLE POND</span><span>MADE FOR SLOW NIGHTS & STRANGE THOUGHTS</span><span>STAY A WHILE <b>✳</b></span></footer>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js"></script>
+  <script src="js/costumes.js"></script>
+  <script src="js/character.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

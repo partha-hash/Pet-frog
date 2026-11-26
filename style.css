@@ -13,21 +13,50 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.pond-scene{posi
 .controls-column{display:flex;flex-direction:column;gap:17px}.speak-panel,.sing-panel{padding:18px 19px}.tiny-label{color:#6e9582;font-size:8px}.field-label{display:block;color:#9db5a4;font-size:9px;margin:22px 0 8px}textarea,select{width:100%;resize:vertical;background:#06191c99;border:1px solid #a4c5a01f;border-radius:8px;color:#e8efdc;padding:12px;font-size:13px;line-height:1.5;outline:none}textarea:focus,select:focus{border-color:#b9d97888}textarea::placeholder{color:#577467}.speak-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:12px}.toggle-row{display:flex;align-items:center;gap:9px;color:#9eb4a5;font-size:11px;cursor:pointer}.toggle-row input{position:absolute;opacity:0}.toggle{width:30px;height:17px;background:#35564c;border-radius:20px;position:relative;transition:.2s}.toggle:after{content:"";position:absolute;width:11px;height:11px;left:3px;top:3px;background:#d7e3cb;border-radius:50%;transition:.2s}.toggle-row input:checked+.toggle{background:#789d58}.toggle-row input:checked+.toggle:after{left:16px;background:#fff}.compact{padding:10px 13px}.voice-note{font:10px "DM Mono",monospace;color:#678879;margin-top:12px;min-height:14px}.song-settings{display:grid;grid-template-columns:1fr 105px;gap:18px;margin-top:17px}.setting label{display:flex;justify-content:space-between;color:#8fa999;font-size:8px;margin-bottom:8px}.setting label strong{color:var(--lime);font-weight:400}.setting input{width:100%;accent-color:var(--lime)}select{padding:8px;font-size:11px}.song-actions{display:flex;gap:8px;margin-top:16px}.song-actions .primary-btn{flex:1}.stop-btn{min-width:74px}.stop-btn:disabled{opacity:.35;cursor:default}.waveform{height:23px;display:flex;align-items:center;gap:4px;margin-top:13px;opacity:.55}.waveform span{height:var(--h,10px);width:3px;border-radius:5px;background:#9dc87a;transform:scaleY(.5)}.waveform.playing span{animation:wave .55s ease-in-out infinite alternate}.waveform span:nth-child(3n){animation-delay:.2s}.waveform span:nth-child(4n){animation-delay:.35s}
 .moods-section{margin-top:17px;padding:18px 20px 20px}.moods-heading{display:flex;align-items:end;justify-content:space-between}h2{font-size:22px;letter-spacing:-.04em;margin:9px 0 0}.mood-hint{color:#718f7e;font-size:8px}.mood-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;margin-top:19px}.mood-btn{min-width:0;display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 4px 10px;background:#061a1d7a;border:1px solid #c0d6b015;border-radius:9px;color:#8da998;transition:.2s}.mood-btn:hover{border-color:#b9d97877;transform:translateY(-2px)}.mood-btn.active{background:#b9d97814;border-color:#b9d9787a;color:var(--lime)}.mood-face{font-size:22px;line-height:1.1;height:25px}.mood-btn b{font:9px "DM Mono",monospace;font-weight:400}.mood-btn[data-mood=stoned] .mood-face{transform:rotate(-8deg)}
 footer{display:flex;justify-content:space-between;color:#607c6d;font-size:8px;padding:22px 3px 4px}footer b{color:var(--lime);font-size:13px;margin-left:4px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);padding:11px 16px;border-radius:30px;background:#d2e9a8;color:#1a3022;font:11px "DM Mono",monospace;opacity:0;pointer-events:none;transition:.25s;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
-/* Character expression states */
-.frog-mount[data-mood=stoned] .lid{transform:translateY(12px)}.frog-mount[data-mood=stoned] .pupil{transform:translateY(4px)}.frog-mount[data-mood=stoned] .mouth-outline{transform:scaleY(.85);transform-origin:center}
-.frog-mount[data-mood=happy] .lid{transform:translateY(-12px)}.frog-mount[data-mood=happy] .mouth-inner{fill:#f2e6cf}.frog-mount[data-mood=happy] .mouth-outline{transform:scaleY(1.12);transform-origin:center}
-.frog-mount[data-mood=laughing] .lid{transform:translateY(-22px)}.frog-mount[data-mood=laughing] .eye-white{transform:scaleY(.25);transform-origin:center}.frog-mount[data-mood=laughing] .mouth-inner{fill:#fff0db}
-.frog-mount[data-mood=crying] .tears{opacity:1}.frog-mount[data-mood=crying] .lid{transform:translateY(7px)}.frog-mount[data-mood=crying] .mouth-outline{transform:scaleY(.65) rotate(180deg);transform-origin:center}
-.frog-mount[data-mood=smug] .lid-left{transform:translateY(9px) rotate(-8deg)}.frog-mount[data-mood=smug] .lid-right{transform:translateY(14px) rotate(8deg)}.frog-mount[data-mood=smug] .mouth-outline{transform:rotate(-5deg) scaleY(.75);transform-origin:center}
-.frog-mount[data-mood=angry] .brow-lines{transform:translateY(12px) rotate(7deg);transform-origin:center}.frog-mount[data-mood=angry] .mouth-outline{transform:scaleY(.55);transform-origin:center}
-.frog-mount[data-mood=shocked] .eye-white{transform:scale(1.2);transform-origin:center}.frog-mount[data-mood=shocked] .pupil{transform:scale(.8);transform-origin:center}.frog-mount[data-mood=shocked] .mouth-outline{transform:scale(.6,1.5);transform-origin:center}
-.frog-mount[data-mood=sleepy] .lid{transform:translateY(19px)}.frog-mount[data-mood=sleepy] .zzz{opacity:1}
-.frog-mount[data-mood=love] .blush{opacity:1}.frog-mount[data-mood=love] .sparkles{opacity:1}.frog-mount[data-mood=love] .pupil{fill:#572b36}
-.frog-mount[data-mood=cool] .lid{transform:translateY(11px)}.frog-mount[data-mood=cool] .eyes:after{content:"";position:absolute}
-.frog-mount[data-mood=thinking] .pupil{transform:translate(10px,-5px)}.frog-mount[data-mood=thinking] .mouth-outline{transform:scale(.8,.7) translateY(-8px);transform-origin:center}
-.frog-mount[data-mood=queasy] .mouth-outline{transform:scaleY(.45) rotate(4deg);transform-origin:center}.frog-mount[data-mood=queasy] .lid{transform:translateY(10px)}
-.frog-mount.talking .mouth-outline{animation:mouth .16s ease-in-out infinite alternate}.frog-mount.talking .mouth-inner{animation:mouthInner .16s ease-in-out infinite alternate}
-@keyframes bob{0%,100%{transform:translateY(2px) rotate(-.5deg)}50%{transform:translateY(-7px) rotate(.5deg)}}@keyframes wave{to{transform:scaleY(1.7);opacity:1}}@keyframes mouth{to{transform:scaleY(1.22)}}@keyframes mouthInner{to{transform:scaleY(1.4)}}
-@media(max-width:850px){.app-shell{padding:20px 20px}.main-grid{grid-template-columns:1fr}.frog-stage{height:330px}.mood-grid{grid-template-columns:repeat(6,1fr)}.intro{padding-top:30px}}
-@media(max-width:520px){.app-shell{padding:15px 13px}.top-status{display:none}.topbar{padding-bottom:14px}.intro{padding:27px 2px 21px}h1{font-size:46px}.frog-card,.speak-panel,.sing-panel,.moods-section{padding:15px}.frog-stage{height:285px}.frog-mount{width:350px;max-width:110%}.lily{width:250px}.mood-grid{grid-template-columns:repeat(4,1fr);gap:7px}.moods-heading{display:block}.mood-hint{display:block;margin-top:10px}footer{font-size:7px;gap:10px;flex-wrap:wrap}.song-settings{grid-template-columns:1fr 95px}}
+/* ===== v2 puppet layout ===== */
+:root{--accent:#9fdc5c}
+.top-status b{color:var(--accent);font-weight:500;letter-spacing:.14em}
+.stage-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:17px;margin-top:22px}
+.studio-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:17px;margin-top:17px}
+.frog-card{padding:18px 20px 17px;overflow:hidden}
+.frog-stage{height:clamp(430px,66vh,640px);position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:visible;margin-top:6px;padding-bottom:34px}
+.halo{position:absolute;left:50%;top:44%;width:min(88%,460px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 68%);transition:background .5s}
+.frog-mount{all:unset;position:relative;z-index:2;height:100%;aspect-ratio:480/800;max-width:84%;cursor:pointer;filter:drop-shadow(0 18px 16px #020e0e80);animation:none;-webkit-tap-highlight-color:transparent}
+.frog-mount:focus-visible{outline:2px dashed var(--accent);outline-offset:6px;border-radius:12px}
+.frog-mount svg{width:100%;height:100%;display:block;overflow:visible}
+.frog-mount.morph{animation:morph .72s ease-in-out}.frog-mount.poked{animation:poked .35s ease-out}
+@keyframes morph{0%{transform:none}30%{transform:scale(.55,1.25) rotate(-9deg)}48%{transform:scale(.02) rotate(160deg)}55%{transform:scale(.02) rotate(200deg)}78%{transform:scale(1.18,.84) rotate(0)}100%{transform:none}}
+@keyframes poked{0%{transform:scale(1.07,.92)}50%{transform:scale(.96,1.05)}100%{transform:none}}
+.poof{position:absolute;z-index:3;left:50%;top:48%;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;opacity:0;pointer-events:none;background:radial-gradient(circle,#fff 0,color-mix(in srgb,var(--accent) 60%,#fff) 30%,transparent 68%)}
+.poof.go{animation:poof .72s ease-out}@keyframes poof{0%,25%{opacity:0;transform:scale(.2)}45%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.6)}}
+.lily{bottom:36px;left:50%;margin-left:-160px;width:320px}.lily-front{bottom:22px}.water-rings{bottom:6px;left:5%}
+.name-tag{bottom:0}
+.nav-btn{position:absolute;z-index:4;top:46%;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#071b20cc;color:var(--ink);font-size:24px;line-height:1;transition:.2s}.nav-btn:hover{border-color:var(--accent);color:var(--accent)}.nav-prev{left:0}.nav-next{right:0}
+.expr-row{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:14px 0 12px;min-height:30px}
+.chip{background:#ffffff0a;border:1px solid var(--line);color:#bcd0bf;border-radius:30px;padding:7px 12px;font:9px "DM Mono",monospace;letter-spacing:.08em;transition:.2s}.chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.frog-actions{flex-wrap:wrap}.frog-actions .primary-btn{flex:1 1 auto}
+.wardrobe,.moods-section{padding:18px 20px}
+.costume-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
+.costume-card{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:8px 6px 10px;background:#061a1d99;border:1px solid #c0d6b01a;border-radius:11px;color:var(--ink);transition:.2s;overflow:hidden}
+.costume-card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--acc) 70%,transparent)}
+.costume-card.active{background:color-mix(in srgb,var(--acc) 13%,#061a1d);border-color:var(--acc);box-shadow:0 0 22px color-mix(in srgb,var(--acc) 25%,transparent)}
+.cprev{width:100%;height:96px;pointer-events:none}.cprev svg{width:100%;height:100%}
+.costume-card b{font-size:11px;font-weight:700;letter-spacing:-.01em}.costume-card small{font-size:8.5px;line-height:1.3;color:#8fa999;min-height:22px}
+.cdot{position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--acc);opacity:0;box-shadow:0 0 10px var(--acc)}.costume-card.active .cdot{opacity:1}
+.moods-section{margin-top:0}.mood-grid{grid-template-columns:repeat(6,1fr)}.mood-face{height:24px}
+.controls-column{display:flex;flex-direction:column;gap:17px}
+.song-actions{margin-top:14px}.viz{display:block;width:100%;height:54px;margin-top:14px;border-radius:8px;background:#06191c80;border:1px solid #a4c5a014;opacity:.6}.viz.on{opacity:1}
+.tabs{display:flex;gap:6px;margin:16px 0 4px;border-bottom:1px solid var(--line)}.tab{background:none;border:0;border-bottom:2px solid transparent;color:#7f9a8a;padding:9px 11px;font:9px "DM Mono",monospace;letter-spacing:.12em}.tab.active{color:var(--accent);border-color:var(--accent)}
+.tab-body{display:grid;grid-template-columns:1fr 1fr;gap:15px 20px;padding-top:14px}.tab-body[hidden]{display:none}.tab-body .setting label{font-size:8px}
+select{padding:8px;font-size:11px}
+.fx-panel{margin-top:17px;padding:16px 20px}.fx-panel summary{cursor:pointer;list-style:none}.fx-panel summary::-webkit-details-marker{display:none}.fx-panel summary .card-topline{display:flex}
+.fx-head{display:flex;gap:14px;align-items:center;justify-content:space-between;margin:14px 0}.fx-head .quiet-btn{white-space:nowrap}
+.fx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.fx-row{background:#061a1d80;border:1px solid #c0d6b012;border-radius:10px;padding:11px 12px;display:flex;flex-direction:column;gap:9px;transition:.2s}.fx-row.off{opacity:.45}.fx-title{font:9px "DM Mono",monospace;letter-spacing:.1em;color:#a9c3b0}
+.fx-row .setting label{font-size:7.5px;margin-bottom:5px}.fx-row .setting input{accent-color:var(--accent)}
+.setting input[type=range]{accent-color:var(--accent)}
+.stage-grid .primary-btn,.studio-grid .primary-btn{background:var(--accent)}
+.mood-pill{color:var(--accent)}
+@media(max-width:900px){.stage-grid,.studio-grid{grid-template-columns:1fr}.frog-stage{height:clamp(400px,62vh,520px)}}
+@media(max-width:560px){.app-shell{padding:15px 12px}.top-status{display:none}.intro{display:none}.costume-grid{grid-template-columns:repeat(3,1fr)}.cprev{height:74px}.costume-card small{display:none}.costume-card b{font-size:10px}.tab-body{grid-template-columns:1fr}.mood-grid{grid-template-columns:repeat(4,1fr)}.nav-btn{width:36px;height:36px}.frog-card,.speak-panel,.sing-panel,.wardrobe,.moods-section{padding:14px}.name-tag .name-caption{display:none}footer{font-size:7px;gap:10px;flex-wrap:wrap}.frog-mount{max-width:78%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
